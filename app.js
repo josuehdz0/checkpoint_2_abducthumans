@@ -101,7 +101,7 @@ if (humans >= upgrade.price) {
 }
 HumanCount();
 drawClickValue();
-drawUpgradeCount(name)
+drawUpgradeCount(name);
 // clickAbduct()
 // appliedUpgrades.push(upgrades[index])
 
@@ -120,6 +120,7 @@ function applyAutoUpgrade(name){
   }
   drawAutoValue()
   HumanCount();
+  drawAutoUpgradeCount(name);
 }
 
 
@@ -178,6 +179,12 @@ function HumanCount(){
 
 function drawUpgradeCount(name) {
   let upgrade = upgrades.find(u => u.name == name);
+  document.getElementById(`${name}Count`).innerHTML = `${upgrade.quantity}`;
+  // NOTE Found this online ^^^^ you can enter the name of the element you want in the HTML so it can have 'multiple' ids!!!
+}
+
+function drawAutoUpgradeCount(name) {
+  let upgrade = automaticUpgrades.find(u => u.name == name);
   document.getElementById(`${name}Count`).innerHTML = `${upgrade.quantity}`;
   // NOTE Found this online ^^^^ you can enter the name of the element you want in the HTML so it can have 'multiple' ids!!!
 }
