@@ -101,6 +101,7 @@ if (humans >= upgrade.price) {
 }
 HumanCount();
 drawClickValue();
+drawUpgradeCount(name)
 // clickAbduct()
 // appliedUpgrades.push(upgrades[index])
 
@@ -171,6 +172,15 @@ function HumanCount(){
   document.getElementById('humans').innerHTML = ` ${humans}<i class="mdi mdi-human-male"></i>`;
 }
 
+
+// SECTION here we will keep track of how many upgrades we have purchased
+
+
+function drawUpgradeCount(name) {
+  let upgrade = upgrades.find(u => u.name == name);
+  document.getElementById(`${name}Count`).innerHTML = `${upgrade.quantity}`;
+  // NOTE Found this online ^^^^ you can enter the name of the element you want in the HTML so it can have 'multiple' ids!!!
+}
 
 
 setInterval(autoAbduct,3000)
