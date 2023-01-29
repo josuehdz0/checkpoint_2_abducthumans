@@ -76,6 +76,7 @@ function drawAutoUpgrades(){
     
   }
   autoupgradesElem.innerHTML = template
+  drawAutoValue()
 
 
 }
@@ -93,10 +94,14 @@ if (humans >= upgrade.price) {
   window.alert("You do not have enough humans!")
 }
 HumanCount();
+drawClickValue();
 // clickAbduct()
 // appliedUpgrades.push(upgrades[index])
 
 }
+
+
+
 
 function applyAutoUpgrade(name){
   let upgrade = automaticUpgrades.find(u => u.name == name);
@@ -104,11 +109,12 @@ function applyAutoUpgrade(name){
     humans -= upgrade.price;
     upgrade.quantity+=1
     appliedAutoUpgrades.push(upgrade);
-    // NOTE does this keep adding to the array? or just pushing to the quantity
+    // NOTE does this keep adding objects to the array? or just pushing to the quantity
     
   } else {
     window.alert('You do not have enough humans!');
   }
+  drawAutoValue()
   HumanCount();
 }
 
@@ -117,7 +123,7 @@ function clickAbduct(){
   humans++
   // console.log(humans);
   for(let i = 0; i < appliedUpgrades.length; i++){
-    humans += appliedUpgrades[i].value;
+    humans += (appliedUpgrades[i].value);
 }
   // NOTE turned this into a function called Human count so that everytime human count is affected elsewhere, we can reuse the same function inside.
   HumanCount()
@@ -133,8 +139,27 @@ function autoAbduct(){
   HumanCount()
 }
 
+function drawClickValue(){
+  let clickValue = 1
+  for (let i = 0; i < appliedUpgrades.length; i++) {
+    clickValue += appliedUpgrades[i].value
+  }
+  document.getElementById("clickValue").innerHTML = `${clickValue}`;
+
+}
+
+function drawAutoValue(){
+  let autoValue = 0
+  // NOTE this ^^^ makes sure that when adding to main autoValue above in line 38, im starting this count at 0 then adding to the line above in line 38
+// console.log(appliedAutoUpgrades);
+  for (let i = 0; i < appliedAutoUpgrades.length; i++) {
+    autoValue += appliedAutoUpgrades[i].value
+  }
+  document.getElementById("autoValue").innerHTML = `${autoValue}<i class="mdi mdi-human-male"></i>`;
+}
+
 function HumanCount(){
-  document.getElementById('humans').innerHTML = ` ${humans} <i class="mdi mdi-human-male"></i>`;
+  document.getElementById('humans').innerHTML = ` ${humans}<i class="mdi mdi-human-male"></i>`;
 }
 
 
