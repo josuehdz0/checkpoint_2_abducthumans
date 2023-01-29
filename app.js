@@ -35,6 +35,7 @@ let appliedAutoUpgrades = [];
 let humans=5000
 
 let clickValue = 1
+let autoValue = 0
 
 function drawUpgrades(){
   let upgradesElem = document.getElementById('upgrade')
@@ -48,7 +49,7 @@ function drawUpgrades(){
     "></i></button>
   </div>
   <div class="col-6 d-flex align-items-center">
-      <h6> ${upgrade.name} +${upgrade.value} Quantity: ${upgrade.quantity}</h6>
+      <h6> ${upgrade.name}<br>+${upgrade.value} </h6>
   </div>
     `
     
@@ -69,7 +70,7 @@ function drawAutoUpgrades(){
       "></i></button>
     </div>
     <div class="col-6 d-flex align-items-center">
-        <h6> ${upgrade.name} +${upgrade.value}</h6>
+        <h6> ${upgrade.name}<br>+${upgrade.value}</h6>
     </div>
     `
     
@@ -119,8 +120,6 @@ function clickAbduct(){
     humans += appliedUpgrades[i].value;
 }
   // NOTE turned this into a function called Human count so that everytime human count is affected elsewhere, we can reuse the same function inside.
-  // document.getElementById('humans').innerHTML = ` ${humans} <i class="mdi mdi-human-male
-  // "></i>`;
   HumanCount()
 }
 
