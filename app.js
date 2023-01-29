@@ -4,13 +4,13 @@ let upgrades =[
     name: 'Small Pod',
     price: 50,
     value: 1,
-    quantity: 1,
+    quantity: 0,
   },
   {
     name: 'Bigboy UFO',
     price: 200,
     value:10,
-    quantity: 1,
+    quantity: 0,
   },
 ]
 
@@ -19,17 +19,18 @@ let automaticUpgrades =[
     name: 'Shuttle',
     price: 1000,
     value:10,
-    quantity: 1,
+    quantity: 0,
   },
   {
     name: "Starfleet",
     price: 5000,
     value:1000,
-    quantity: 1,
+    quantity: 0,
   },
 ]
 
 let appliedUpgrades = [];
+let appliedAutoUpgrades = [];
 
 let humans=5000
 
@@ -90,7 +91,8 @@ if (humans >= upgrade.price) {
 } else {
   window.alert("You do not have enough humans!")
 }
-clickAbduct()
+HumanCount();
+// clickAbduct()
 // appliedUpgrades.push(upgrades[index])
 
 }
@@ -100,29 +102,44 @@ function applyAutoUpgrade(name){
   if (humans >= upgrade.price) {
     humans -= upgrade.price;
     upgrade.quantity+=1
-    appliedUpgrades.push(upgrade);
+    appliedAutoUpgrades.push(upgrade);
+    // NOTE does this keep adding to the array? or just pushing to the quantity
     
   } else {
     window.alert('You do not have enough humans!');
   }
-  clickAbduct();
+  HumanCount();
 }
 
 function clickAbduct(){
   // console.log('test');
   humans++
   // console.log(humans);
-  
-  document.getElementById('humans').innerHTML = ` ${humans} <i class="mdi mdi-human-male
-  "></i>`;
+  for(let i = 0; i < appliedUpgrades.length; i++){
+    humans += appliedUpgrades[i].value;
+}
+  // NOTE turned this into a function called Human count so that everytime human count is affected elsewhere, we can reuse the same function inside.
+  // document.getElementById('humans').innerHTML = ` ${humans} <i class="mdi mdi-human-male
+  // "></i>`;
+  HumanCount()
 }
 
+function autoAbduct(){
+  // appliedAutoUpgrades.forEach(autoupgrades => {
+  //   humans += appliedAutoUpgrades[i].value
+  // });
+  for (let i = 0; i < appliedAutoUpgrades.length; i++) {
+    humans += appliedAutoUpgrades[i].value;
+  }
+  HumanCount()
+}
 
 function HumanCount(){
-
-
+  document.getElementById('humans').innerHTML = ` ${humans} <i class="mdi mdi-human-male"></i>`;
 }
 
 
+
+setInterval(autoAbduct,3000)
 drawUpgrades()
 drawAutoUpgrades()
