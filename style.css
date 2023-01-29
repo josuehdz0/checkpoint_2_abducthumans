@@ -1,9 +1,28 @@
 :root{
+--main: #d7d7a198;
+--light-main:  #a6b8a2;
 
+}
 
+.bg-card{
+  background-color: var(--main);
+  
+}
+.light-card{
+  background-color: var(--light-main);
+  color: rgb(0, 0, 0);
+
+}
+
+*{
+  /* color: aliceblue; */
 }
 
 .earth{
   user-select: none;
+  max-height:75vh;
 }
 
+.space{
+  /* background-image: url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80); */
+}

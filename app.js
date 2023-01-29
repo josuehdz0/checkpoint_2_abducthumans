@@ -65,7 +65,7 @@ function drawAutoUpgrades(){
   for (let i = 0; i < automaticUpgrades.length; i++) {
     const upgrade = automaticUpgrades[i];
     template += `
-    <div class="col-4 text-center">
+    <div class="col-5 text-center">
       <button class="btn btn-warning" onclick="applyAutoUpgrade('${upgrade.name}')">${upgrade.price}<i class="mdi mdi-human-male
       "></i></button>
     </div>

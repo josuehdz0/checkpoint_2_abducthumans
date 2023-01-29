@@ -36,7 +36,7 @@
 
 </head>
 
-<body class="debug">
+<body class=" space">
 
   <header class="text-center">
     <h1 class="my-4">ABDUCT THE HUMANS</h1>
@@ -49,33 +49,35 @@
         <div class="col-8">
           <!-- NOTE This is earth -->
           <div class="row">
-            <div class="card">
+            <div class="">
               <img src="earth1.png" alt="planet" class="image-fluid earth" onclick="clickAbduct()">
             </div>
           </div>
           <!-- This is my Resources and current stats -->
           <div class="row">
             <div class="col-6">
-              <div class="card d-flex">
-                <h2>HUMANS:<span id="humans"> 0 <i class="mdi mdi-human-male
+              <div class=" card bg-card d-flex">
+                <h2 class="card light-card m-2 p-2">HUMANS:<span class="" id="humans"> 0 <i class="mdi mdi-human-male
                   "></i></span></h2>
               </div>
             </div>
-            <div class="col-3 ">
-              <div class="card p-1">
-                <h6>CLICK: <span id="clickValue">1<i class="mdi mdi-human-male"></i></span></h6>
+            <div class="card bg-warning col-3 ">
+              <div class=" p-1">
+                <h3>CLICK: <span id="clickValue">1<i class="mdi mdi-human-male"></i></span></h3>
+                <h4>Small Pods:</h4>
+                <h4>Bigboy UFOs:</h4>
               </div>
             </div>
-            <div class="col-3">
-              <div class="card p-1">
-                <h6>AUTO: <span id="autoValue">0<i class="mdi mdi-human-male"></i></span></h6>
+            <div class=" card bg-warning  col-3">
+              <div class=" p-1">
+                <h3>AUTO: <span id="autoValue">0<i class="mdi mdi-human-male"></i></span></h3>
               </div>
             </div>
           </div>
         </div>
         <!-- NOTE This column shows all my upgradable abilities -->
         <div class="col-4 py-3">
-          <div>
+          <div class="card my-4 p-3">
             <h4> CLICK UPGRADES</h4>
             <div class="row my-3" id="upgrade">
               <!-- <div class="col-4 text-center">
@@ -86,18 +88,19 @@
                 <h5> Small Pod +1</h5>
               </div> -->
             </div>
-
+          </div>
+          <div class="card my-4 p-3">
             <h4>AUTOMATIC UPGRADES</h4>
             <div class="row my-3" id="autoupgrade">
               <!-- <div class="col-4 text-center">
-                <button class="btn btn-warning">1000 <i class="mdi mdi-human-male
-                  "></i>
-
-                </button>
-              </div>
-              <div class="col-6 d-flex align-items-center">
-                <h6> Small Pod +1k/3s</h6>
-              </div> -->
+      <button class="btn btn-warning">1000 <i class="mdi mdi-human-male
+        "></i>
+        
+      </button>
+    </div>
+    <div class="col-6 d-flex align-items-center">
+      <h6> Small Pod +1k/3s</h6>
+    </div> -->
             </div>
           </div>
         </div>
