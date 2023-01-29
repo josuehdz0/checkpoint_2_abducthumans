@@ -1,3 +1,4 @@
+// SECTION Arrays
 
 let upgrades =[
   {
@@ -32,10 +33,15 @@ let automaticUpgrades =[
 let appliedUpgrades = [];
 let appliedAutoUpgrades = [];
 
-let humans=5000
 
+
+// SECTION important variables
+let humans=5000
 let clickValue = 1
 let autoValue = 0
+
+
+// SECTION functions
 
 function drawUpgrades(){
   let upgradesElem = document.getElementById('upgrade')
@@ -83,7 +89,7 @@ function drawAutoUpgrades(){
 
 
 
-
+// NOTE These too functions move objects to new applied arrays
 function applyUpgrade(name){
 let upgrade = upgrades.find(u => u.name==name);
 if (humans >= upgrade.price) {
@@ -100,9 +106,6 @@ drawClickValue();
 
 }
 
-
-
-
 function applyAutoUpgrade(name){
   let upgrade = automaticUpgrades.find(u => u.name == name);
   if (humans >= upgrade.price) {
@@ -118,6 +121,8 @@ function applyAutoUpgrade(name){
   HumanCount();
 }
 
+
+// NOTE These functions add to the human count
 function clickAbduct(){
   // console.log('test');
   humans++
@@ -139,6 +144,8 @@ function autoAbduct(){
   HumanCount()
 }
 
+
+// NOTE These functions draw the sum of values of click and automatics upgrades
 function drawClickValue(){
   let clickValue = 1
   for (let i = 0; i < appliedUpgrades.length; i++) {
@@ -158,6 +165,8 @@ function drawAutoValue(){
   document.getElementById("autoValue").innerHTML = `${autoValue}<i class="mdi mdi-human-male"></i>`;
 }
 
+
+// NOTE This function draws the total Human count
 function HumanCount(){
   document.getElementById('humans').innerHTML = ` ${humans}<i class="mdi mdi-human-male"></i>`;
 }
