@@ -4,6 +4,10 @@
 
 }
 
+header{
+  color: var(--main);
+}
+
 .bg-card{
   background-color: var(--main);
   
@@ -11,11 +15,15 @@
 .light-card{
   background-color: var(--light-main);
   color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 3px 0px;
 
 }
 
+
+
 *{
   /* color: aliceblue; */
+  font-family: 'Russo One', sans-serif;
 }
 
 .earth{
@@ -24,5 +32,5 @@
 }
 
 .space{
-  /* background-image: url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80); */
+  background-image: url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80);
 }

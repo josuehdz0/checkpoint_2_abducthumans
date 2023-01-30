@@ -15,6 +15,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
     integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
     body.debug .container,
@@ -36,77 +39,84 @@
 
 </head>
 
-<body class=" debug space">
+<body class="debug space">
 
   <header class="text-center">
-    <h1 class="my-4">ABDUCT THE HUMANS</h1>
+    <h1 class="my-4">🛸 ABDUCT THE HUMANS 🛸</h1>
   </header>
 
   <main>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-8">
+      <div class="row justify-content-center">
+        <div class="col-7">
           <!-- NOTE This is earth -->
           <div class="row">
-            <div class="">
-              <img src="earth1.png" alt="planet" class="image-fluid earth" onclick="clickAbduct()">
-            </div>
-          </div>
-          <!-- This is my Resources and current stats -->
-          <div class="row">
-            <div class="col-6">
-              <div class=" card bg-card d-flex">
-                <h2 class="card light-card m-2 p-2">HUMANS ABDUCTED:<span class="" id="humans"> 0 <i class="mdi mdi-human-male
-                  "></i></span></h2>
-              </div>
-            </div>
-            <div class="card bg-warning col-3 ">
-              <div class=" p-1">
-                <h3>CLICK: <span id="clickValue">1<i class="mdi mdi-human-male"></i></span></h3>
-                <h6>Small Pods: <span id="Small PodCount"> 0</span>(+1)</h6>
-                <h6>Bigboy UFOs: <span id="Bigboy UFOCount"> 0</span>(+10)</h6>
-              </div>
-            </div>
-            <div class=" card bg-warning  col-3">
-              <div class=" p-1">
-                <h3>AUTO: <span id="autoValue">0<i class="mdi mdi-human-male"></i></span></h3>
-                <p>Small Pods: <span id="ShuttleCount"> 0</span>(+10/s)</p>
-                <p>Bigboy UFOs: <span id="StarfleetCount"> 0</span>(+1000/s)</p>
-              </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
+                alt="planet" class="image-fluid earth" onclick="clickAbduct()">
             </div>
           </div>
         </div>
         <!-- NOTE This column shows all my upgradable abilities -->
         <div class="col-4 py-3">
-          <div class="card my-4 p-3">
-            <h4> CLICK UPGRADES</h4>
-            <div class="row my-3" id="upgrade">
-              <!-- <div class="col-4 text-center">
-                <button class="btn btn-warning" onclick="applyUpgrade()">50<i class="mdi mdi-human-male
-                  "></i></button>
+          <div class="card bg-card my-4 p-3">
+            <div class="card light-card p-2">
+              <h5 class="text-center"> CLICK UPGRADES</h5>
+              <div class="row justify-content-center my-3" id="upgrade">
+                <!-- <div class="col-4 text-center">
+                  <button class="btn btn-warning" onclick="applyUpgrade()">50<i class="mdi mdi-human-male
+                    "></i></button>
+                </div>
+                <div class="col-6 d-flex align-items-center">
+                  <h5> Small Pod +1</h5>
+                </div> -->
               </div>
-              <div class="col-6 d-flex align-items-center">
-                <h5> Small Pod +1</h5>
-              </div> -->
             </div>
           </div>
-          <div class="card my-4 p-3">
-            <h4>AUTOMATIC UPGRADES</h4>
-            <div class="row my-3" id="autoupgrade">
-              <!-- <div class="col-4 text-center">
-      <button class="btn btn-warning">1000 <i class="mdi mdi-human-male
-        "></i>
-        
-      </button>
-    </div>
-    <div class="col-6 d-flex align-items-center">
-      <h6> Small Pod +1k/3s</h6>
-    </div> -->
+          <div class="card bg-card my-4 p-3">
+            <div class="card light-card p-2">
+              <h5 class="text-center">AUTOMATIC UPGRADES</h5>
+              <div class="row justify-content-center my-3" id="autoupgrade">
+                <!-- <div class="col-4 text-center">
+                <button class="btn btn-warning">1000 <i class="mdi mdi-human-male"></i></button>
+                </div>
+                <div class="col-6 d-flex align-items-center">
+                  <h6> Small Pod +1k/3s</h6>
+                </div> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- This is my Resources and current stats -->
+      <div class="row m-3">
+        <div class="col-5">
+          <div class=" card bg-card d-flex">
+            <h2 class="card light-card m-2 p-2">HUMANS ABDUCTED:<span class="" id="humans"> 0 <i class="mdi mdi-human-male
+              "></i></span></h2>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card bg-card ">
+            <div class=" card light-card m-2 p-2">
+              <h3>CLICK: <span id="clickValue">1<i class="mdi mdi-human-male"></i></span></h3>
+              <h6>UFOs: <span id="UFOCount"> 0 </span>(+1)</h6>
+              <h6>Bigboy UFOs: <span id="Bigboy UFOCount"> 0 </span>(+10)</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class=" card bg-card">
+            <div class="card light-card m-2 p-2">
+              <h3>AUTO: <span id="autoValue">0<i class="mdi mdi-human-male"></i></span></h3>
+              <h6>Shuttles: <span id="ShuttleCount"> 0 </span> (+10/s)</h6>
+              <h6>Starfleets: <span id="StarfleetCount"> 0 </span>(+1000/s)</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     </div>

@@ -2,7 +2,7 @@
 
 let upgrades =[
   {
-    name: 'Small Pod',
+    name: 'UFO',
     price: 50,
     value: 1,
     quantity: 0,
@@ -40,7 +40,7 @@ let appliedAutoUpgrades = [];
 
 
 // SECTION important variables
-let humans= 0
+let humans= 1000000
 let clickValue = 1
 let autoValue = 0
 
@@ -54,8 +54,8 @@ function drawUpgrades(){
   for (let i = 0; i < upgrades.length; i++) {
     const upgrade = upgrades[i];
     template += `
-    <div class="col-4 text-center">
-    <button class="btn btn-warning" onclick="applyUpgrade('${upgrade.name}')">${upgrade.price}<i class="mdi mdi-human-male
+    <div class="col-5 text-center d-flex justify-content-end p-2">
+    <button class="btn btn-primary" onclick="applyUpgrade('${upgrade.name}')">${upgrade.price}<i class="mdi mdi-human-male
     "></i></button>
   </div>
   <div class="col-6 d-flex align-items-center">
@@ -75,8 +75,8 @@ function drawAutoUpgrades(){
   for (let i = 0; i < automaticUpgrades.length; i++) {
     const upgrade = automaticUpgrades[i];
     template += `
-    <div class="col-5 text-center">
-      <button class="btn btn-warning" onclick="applyAutoUpgrade('${upgrade.name}')">${upgrade.price}<i class="mdi mdi-human-male
+    <div class="col-5 text-center p-2 d-flex justify-content-end">
+      <button class="btn btn-primary" onclick="applyAutoUpgrade('${upgrade.name}')">${upgrade.price}<i class="mdi mdi-human-male
       "></i></button>
     </div>
     <div class="col-6 d-flex align-items-center">
