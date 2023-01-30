@@ -6,12 +6,14 @@ let upgrades =[
     price: 50,
     value: 1,
     quantity: 0,
+    priceMultiplier: 1.1,
   },
   {
     name: 'Bigboy UFO',
     price: 200,
     value:10,
     quantity: 0,
+    priceMultiplier: 1.1
   },
 ]
 
@@ -21,12 +23,14 @@ let automaticUpgrades =[
     price: 1000,
     value:10,
     quantity: 0,
+    priceMultiplier: 1.2
   },
   {
     name: "Starfleet",
     price: 5000,
     value:1000,
     quantity: 0,
+    priceMultiplier: 1.1
   },
 ]
 
@@ -36,7 +40,7 @@ let appliedAutoUpgrades = [];
 
 
 // SECTION important variables
-let humans=5000
+let humans=1000000000
 let clickValue = 1
 let autoValue = 0
 
@@ -95,11 +99,14 @@ let upgrade = upgrades.find(u => u.name==name);
 if (humans >= upgrade.price) {
   humans -= upgrade.price
   upgrade.quantity+=1
+  // upgrade.price*= 2;
+  upgrade.price = Math.floor(upgrade.price * upgrade.priceMultiplier);
   appliedUpgrades.push(upgrade)
 } else {
   window.alert("You do not have enough humans!")
 }
 HumanCount();
+drawUpgrades();
 drawClickValue();
 drawUpgradeCount(name);
 // clickAbduct()
@@ -112,14 +119,16 @@ function applyAutoUpgrade(name){
   if (humans >= upgrade.price) {
     humans -= upgrade.price;
     upgrade.quantity+=1
+    upgrade.price = Math.floor(upgrade.price * upgrade.priceMultiplier);
     appliedAutoUpgrades.push(upgrade);
     // NOTE does this keep adding objects to the array? or just pushing to the quantity
     
   } else {
     window.alert('You do not have enough humans!');
   }
-  drawAutoValue()
   HumanCount();
+  drawAutoUpgrades();
+  drawAutoValue()
   drawAutoUpgradeCount(name);
 }
 
@@ -169,12 +178,16 @@ function drawAutoValue(){
 
 
 // NOTE This function draws the total Human count
+
+
 function HumanCount(){
-  document.getElementById('humans').innerHTML = ` ${humans}<i class="mdi mdi-human-male"></i>`;
+  document.getElementById('humans').innerHTML = ` ${humans.toLocaleString()}<i class="mdi mdi-human-male"></i>`;
+  // SECTION ----------------------------------------------^^^^^^^^^^^^^^----- places ',' every thousands
 }
 
 
 // SECTION here we will keep track of how many upgrades we have purchased
+
 
 
 function drawUpgradeCount(name) {
