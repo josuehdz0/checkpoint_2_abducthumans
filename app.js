@@ -40,7 +40,7 @@ let appliedAutoUpgrades = [];
 
 
 // SECTION important variables
-let humans= 1000000000
+let humans= 0
 let clickValue = 1
 let autoValue = 0
 
