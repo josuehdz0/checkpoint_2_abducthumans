@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="debug space">
+<body class="space">
 
   <header class="text-center">
     <h1 class="my-4">🛸 ABDUCT THE HUMANS 🛸</h1>
@@ -52,7 +52,7 @@
         <div class="col-7">
           <!-- NOTE This is earth -->
           <div class="row">
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center my-5">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
                 alt="planet" class="image-fluid earth" onclick="clickAbduct()">
             </div>
@@ -62,7 +62,7 @@
         <div class="col-4 py-3">
           <div class="card bg-card my-4 p-3">
             <div class="card light-card p-2">
-              <h5 class="text-center"> CLICK UPGRADES</h5>
+              <h5 class="text-center"> CLICK UPGRADES <i class="mdi mdi-cursor-pointer"></i></h5>
               <div class="row justify-content-center my-3" id="upgrade">
                 <!-- <div class="col-4 text-center">
                   <button class="btn btn-warning" onclick="applyUpgrade()">50<i class="mdi mdi-human-male
@@ -76,7 +76,7 @@
           </div>
           <div class="card bg-card my-4 p-3">
             <div class="card light-card p-2">
-              <h5 class="text-center">AUTOMATIC UPGRADES</h5>
+              <h5 class="text-center">AUTOMATIC UPGRADES <i class="mdi mdi-timer"></i></h5>
               <div class="row justify-content-center my-3" id="autoupgrade">
                 <!-- <div class="col-4 text-center">
                 <button class="btn btn-warning">1000 <i class="mdi mdi-human-male"></i></button>
@@ -100,25 +100,26 @@
         <div class="col-3">
           <div class="card bg-card ">
             <div class=" card light-card m-2 p-2">
-              <h3>CLICK: <span id="clickValue">1<i class="mdi mdi-human-male"></i></span></h3>
-              <h6>UFOs: <span id="UFOCount"> 0 </span>(+1)</h6>
-              <h6>Bigboy UFOs: <span id="Bigboy UFOCount"> 0 </span>(+10)</h6>
+              <h3>CLICK <i class="mdi mdi-cursor-pointer"></i>: <span id="clickValue">1<i
+                    class="mdi mdi-human-male"></i></span>
+              </h3>
+              <h6>UFOs: <span id="UFOCount"> 0 </span> (+1)</h6>
+              <h6>Bigboy UFOs: <span id="Bigboy UFOCount"> 0 </span> (+10)</h6>
             </div>
           </div>
         </div>
         <div class="col-4">
           <div class=" card bg-card">
             <div class="card light-card m-2 p-2">
-              <h3>AUTO: <span id="autoValue">0<i class="mdi mdi-human-male"></i></span></h3>
-              <h6>Shuttles: <span id="ShuttleCount"> 0 </span> (+10/s)</h6>
-              <h6>Starfleets: <span id="StarfleetCount"> 0 </span>(+1000/s)</h6>
+              <h3>AUTO <i class="mdi mdi-timer"></i> :
+                <span id="autoValue"></span>
+              </h3>
+              <h6>Shuttles: <span id="ShuttleCount"> 0 </span> (+10/3s)</h6>
+              <h6>Starfleets: <span id="StarfleetCount"> 0 </span> (+1000/3s)</h6>
             </div>
           </div>
         </div>
       </div>
-
-
-
     </div>
 
 
@@ -127,7 +128,14 @@
   </main>
 
 
-  <footer></footer>
+  <footer class="d-flex justify-content-center">
+    <div class="container m-4 p-4 light-card">
+      <h4>Your mission is to abduct as many humans as you can for the greater good of the planet. Click the planet to
+        abduct a human and save up to purchase click upgrades or automatic upgrades.</h4>
+
+
+    </div>
+  </footer>
 
 
   <script src="app.js"></script>

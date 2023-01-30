@@ -40,7 +40,7 @@ let appliedAutoUpgrades = [];
 
 
 // SECTION important variables
-let humans= 1000000
+let humans= 1000000000
 let clickValue = 1
 let autoValue = 0
 
@@ -80,7 +80,7 @@ function drawAutoUpgrades(){
       "></i></button>
     </div>
     <div class="col-6 d-flex align-items-center">
-        <h6> ${upgrade.name}<br>+${upgrade.value}</h6>
+        <h6> ${upgrade.name}<br>+${upgrade.value}/3s</h6>
     </div>
     `
     
@@ -173,7 +173,7 @@ function drawAutoValue(){
   for (let i = 0; i < appliedAutoUpgrades.length; i++) {
     autoValue += appliedAutoUpgrades[i].value
   }
-  document.getElementById("autoValue").innerHTML = `${autoValue}<i class="mdi mdi-human-male"></i>`;
+  document.getElementById("autoValue").innerHTML = `${autoValue}<i class="mdi mdi-human-male"></i>/3s`;
 }
 
 
@@ -183,6 +183,10 @@ function drawAutoValue(){
 function HumanCount(){
   document.getElementById('humans').innerHTML = ` ${humans.toLocaleString()}<i class="mdi mdi-human-male"></i>`;
   // SECTION ----------------------------------------------^^^^^^^^^^^^^^----- places ',' every thousands
+  let maxPopulation = 7700000001
+if(humans >= maxPopulation){
+  window.alert("You have abducted the entire human population. Congrats, you saved them. GAME OVER")
+}
 }
 
 
@@ -201,6 +205,11 @@ function drawAutoUpgradeCount(name) {
   document.getElementById(`${name}Count`).innerHTML = `${upgrade.quantity}`;
   // NOTE Found this online ^^^^ you can enter the name of the element you want in the HTML so it can have 'multiple' ids!!!
 }
+
+
+
+
+
 
 
 setInterval(autoAbduct,3000)
