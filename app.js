@@ -13,7 +13,7 @@ let upgrades =[
     price: 200,
     value:10,
     quantity: 0,
-    priceMultiplier: 1.1
+    priceMultiplier: 1.2
   },
 ]
 
@@ -23,7 +23,7 @@ let automaticUpgrades =[
     price: 1000,
     value:10,
     quantity: 0,
-    priceMultiplier: 1.2
+    priceMultiplier: 1.3
   },
   {
     name: "Starfleet",
